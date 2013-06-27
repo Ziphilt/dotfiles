@@ -44,7 +44,7 @@ set linebreak
 
 " possibly not a good idea on multi-user system
 "set backupdir=~/.vim/backup/
-"set directory=~/.vim/backup/     
+"set directory=~/.vim/backup/
 "set undodir=~/.vim/backup/
 
 " gui specific
