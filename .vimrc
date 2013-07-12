@@ -4,6 +4,7 @@ colors molokai
 
 filetype plugin indent on
 syntax enable
+syntax sync fromstart
 
 " misc
 set autowrite
@@ -12,9 +13,9 @@ set modelines=0
 set mouse=a
 
 " searching
-set incsearch
 set hlsearch
 set ignorecase
+set incsearch
 set smartcase
 
 " indentation
@@ -23,14 +24,16 @@ set shiftwidth=4
 set softtabstop=4
 
 " display
-set number
-set ruler
-set showmatch
-set virtualedit=all
+set cursorcolumn
+set cursorline
 set foldcolumn=1
 set foldmethod=manual
 set laststatus=2
 set linebreak
+set number
+set ruler
+set showmatch
+set virtualedit=all
 
 " might not be a good default
 "set gdefault
