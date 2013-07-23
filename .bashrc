@@ -1,3 +1,6 @@
+if [ "$COLORTERM" = 'gnome-terminal' -a "$TERM" = 'xterm' ] ; then
+    export TERM='gnome-256color'
+fi
 # Append to the history file on every prompt.  Interestingly, this allows
 # repeats in the file even though erasedups is set.
 export PROMPT_COMMAND='history -a'
