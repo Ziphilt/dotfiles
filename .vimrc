@@ -10,6 +10,8 @@ set autowrite
 set backspace=indent,eol,start
 set modelines=0
 set mouse=a
+set history=1000
+set viminfo='1000,f1,<50,s10,h
 
 " searching
 set incsearch
@@ -53,6 +55,7 @@ set linebreak
 "au FocusLost * :wa
 
 nnoremap <leader><space> :nohlsearch<cr>
+nnoremap <leader>d :read !date +\%Y-\%m-\%d<cr>
 nnoremap <leader>l :set list!<cr>
 nnoremap <leader>o :browse oldfiles<cr>
 " reload config
