@@ -1,9 +1,11 @@
 set nocompatible
 
-colors molokai
-
-filetype plugin indent on
 syntax enable
+set background=dark
+colors solarized
+
+execute pathogen#infect()
+filetype plugin indent on
 syntax sync fromstart
 
 " misc
