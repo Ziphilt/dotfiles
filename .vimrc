@@ -26,6 +26,8 @@ set smartcase
 set expandtab
 set shiftwidth=4
 set softtabstop=4
+" only indent one sw in python after open paren
+let g:pyindent_open_paren = '&sw'
 
 " display
 set cursorcolumn
