@@ -5,7 +5,8 @@ floating_modifier $mod
 
 # starting programs
 bindsym $mod+Return exec urxvt256c
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec "dmenu_run -nb \#002b36 -nf \#93a1a1 -sb \#93a1a1 -sf \#002b36 -fn -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*"
+bindsym $mod+m exec "cmus-remote -u"
 bindsym $mod+l exec "i3lock -c 002b36"
 bindsym $mod+Shift+k kill
 
