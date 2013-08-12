@@ -31,4 +31,5 @@ export PAGER=~/bin/vimpager
 alias less=$PAGER
 alias zless=$PAGER
 
-alias lst='ls -latF --color=auto'
+alias l='ls -laF --color=auto'
+alias lt='ls -latF --color=auto'
