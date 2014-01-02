@@ -5,7 +5,7 @@ fi
 
 # Append to the history file on every prompt.  Interestingly, this allows
 # repeats in the file even though erasedups is set.
-export PROMPT_COMMAND='history -a'
+export PROMPT_COMMAND='history -a; printf "\a"'
 export HISTCONTROL=ignorespace:ignoredups:erasedups
 export HISTSIZE=10000
 
@@ -14,7 +14,7 @@ export HISTFILESIZE=''
 
 # affects only the display format of history builtin, but being set does cause
 # timestamps to be placed in .bash_history
-export HISTTIMEFORMAT='%m-%d-%y %H:%M:%S '
+export HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S '
 
 RED='\[\e[31;1m\]'
 GREEN='\[\e[32;1m\]'
@@ -31,5 +31,6 @@ export PAGER=~/bin/vimpager
 alias less=$PAGER
 alias zless=$PAGER
 
-alias l='ls -laF --color=auto'
-alias lt='ls -latF --color=auto'
+alias l='LC_COLLATE="C" ls -l --almost-all --classify --color=auto --group-directories-first'
+alias lt='l -t --reverse'
+alias j='jobs -l'
