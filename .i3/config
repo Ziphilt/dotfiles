@@ -5,7 +5,7 @@ floating_modifier $mod
 
 # starting programs
 bindsym $mod+Return exec urxvt256c
-bindsym $mod+d exec "dmenu_run -nb \#002b36 -nf \#93a1a1 -sb \#93a1a1 -sf \#002b36 -fn -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*"
+bindsym $mod+d exec "dmenu_run -nb \#002b36 -nf \#586e75 -sb \#073642 -sf \#6c71c4 -fn -*-terminus-bold-*-*-*-14-*-*-*-*-*-*-*"
 bindsym $mod+m exec "cmus-remote -u"
 #bindsym $mod+l exec "notify-send DUNST_COMMAND_PAUSE; i3lock -c 002b36; notify-send DUNST_COMMAND_RESUME"
 bindsym $mod+l exec "i3lock -c 002b36"
@@ -95,11 +95,11 @@ bindsym $mod+Shift+r mode "resize"
 
 
 # appearance
-font -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
+font -*-terminus-bold-*-*-*-14-*-*-*-*-*-*-*
 # class                 border  backgr. text    indicator
-client.focused          #586e75 #839496 #eee8d5 #586e75 # base01  base0   base2   base01
-client.focused_inactive #073642 #657b83 #93a1a1 #073642 # base02  base00  base1   base02
-client.unfocused        #586e75 #073642 #839496 #586e75 # base01  base02  base0   base01
+client.focused          #586e75 #073642 #6c71c4 #586e75 # base01  base02  violet  base01
+client.focused_inactive #073642 #002b36 #839496 #073642 # base02  base03  base0   base02
+client.unfocused        #073642 #002b36 #586e75 #586e75 # base02  base03  base01  base01
 client.urgent           #073642 #dc322f #eee8d5 #dc322f # base02  red     base2   red
 client.background       #002b36                         # base03
 
@@ -127,12 +127,14 @@ bar {
     status_command i3status
     colors {
         background #002b36  # base03
-        statusline #93a1a1  # base1
+        statusline #586e75  # base01
         separator  #586e75  # base01
 
-        focused_workspace  #586e75 #839496 #eee8d5  # base01  base0   base2
+        #                  border  backgr. text
+        focused_workspace  #586e75 #073642 #6c71c4  # base01  base02  violet
+        # for multi-monitor
         active_workspace   #586e75 #657b83 #eee8d5  # base01  base00  base2
-        inactive_workspace #586e75 #073642 #839496  # base01  base03  base0
+        inactive_workspace #073642 #002b36 #586e75  # base02  base03  base01
         urgent_workspace   #073642 #dc322f #eee8d5  # base02  red     base2
     }
 }
