@@ -1,0 +1,340 @@
+# Solarized Dark dircolors scheme copied from
+# https://github.com/seebi/dircolors-solarized/blob/master/dircolors.ansi-dark
+# and modified to my tastes.
+# Specifically, modified to work with urxvt, which can show all colors bold,
+# so it doesn't need the bold = bright hackery.
+
+COLOR tty
+
+TERM Eterm
+TERM ansi
+TERM color-xterm
+TERM color_xterm
+TERM con132x25
+TERM con132x30
+TERM con132x43
+TERM con132x60
+TERM con80x25
+TERM con80x28
+TERM con80x30
+TERM con80x43
+TERM con80x50
+TERM con80x60
+TERM cons25
+TERM console
+TERM cygwin
+TERM dtterm
+TERM eterm-color
+TERM fbterm
+TERM gnome
+TERM gnome-256color
+TERM jfbterm
+TERM konsole
+TERM konsole-256color
+TERM kterm
+TERM linux
+TERM linux-c
+TERM mach-color
+TERM mlterm
+TERM nxterm
+TERM putty
+TERM putty-256color
+TERM rxvt
+TERM rxvt-256color
+TERM rxvt-cygwin
+TERM rxvt-cygwin-native
+TERM rxvt-unicode
+TERM rxvt-unicode-256color
+TERM rxvt-unicode256
+TERM screen
+TERM screen-256color
+TERM screen-256color-bce
+TERM screen-256color-s
+TERM screen-bce
+TERM screen-w
+TERM screen.linux
+TERM screen.xterm-new
+TERM st
+TERM st-256color
+TERM vt100
+TERM xterm
+TERM xterm-16color
+TERM xterm-256color
+TERM xterm-88color
+TERM xterm-color
+TERM xterm-debian
+TERM xterm-new
+TERM xterm-termite
+
+# 8-bit output
+EIGHTBIT 1
+
+NORMAL 00
+FILE 00
+DIR 34
+OTHER_WRITABLE 34;40
+LINK 35
+
+BLK  33;48;5;10
+CHR  37;48;5;10
+DOOR 35;48;5;10 # Solaris 2.5 and later
+FIFO 30;48;5;10
+SOCK 35;48;5;10
+
+# Orphaned symlinks (blinking white on red)
+# Blink may or may not work (works on iTerm dark or light, and Putty dark)
+ORPHAN  05;37;41
+# ... and the files that orphaned symlinks point to (blinking white on red)
+MISSING 05;37;41
+
+# files with execute permission
+EXEC 38;5;9  # Unix
+.app 38;5;9  # OSX
+.bat 38;5;9  # Win
+.cmd 38;5;9  # Win
+.com 38;5;9  # Win
+.exe 38;5;9  # Win
+.reg 38;5;9  # Win
+
+# text
+.conf 32
+.md 32
+.mkd 32
+.org 32
+.txt 32
+
+# important text
+*AUTHORS 01;38;5;14
+*CHANGELOG 01;38;5;14
+*INSTALL 01;38;5;14
+*LICENSE 01;38;5;14
+*Makefile 01;38;5;14
+*README 01;38;5;14
+*makefile 01;38;5;14
+.mk 01;38;5;14
+
+# source text
+.0 32
+.1 32
+.2 32
+.3 32
+.4 32
+.5 32
+.6 32
+.7 32
+.8 32
+.9 32
+.C 32
+.S 32
+.asm 32
+.c 32
+.cc 32
+.coffee 32
+.cpp 32
+.csh 32
+.css 32
+.cxx 32
+.el 32
+.erb 32
+.factor 32
+.fish 32
+.h 32
+.haml 32
+.hpp 32
+.hs 32
+.htm 32
+.html 32
+.java 32
+.js 32
+.l 32
+.less 32
+.m 32
+.man 32
+.n 32
+.objc 32
+.p 32
+.php 32
+.pl 32
+.pm 32
+.pod 32
+.py 32
+.rb 32
+.rdf 32
+.rkt 32
+.sass 32
+.scss 32
+.sh 32
+.shtml 32
+.tex 32
+.vim 32
+.xml 32
+.zsh 32
+
+# image
+.JPG 33
+.bmp 33
+.cgm 33
+.dl 33
+.dvi 33
+.emf 33
+.eps 33
+.gif 33
+.jpeg 33
+.jpg 33
+.mng 33
+.pbm 33
+.pcx 33
+.pdf 33
+.pgm 33
+.png 33
+.ppm 33
+.pps 33
+.ppsx 33
+.ps 33
+.svg 33
+.svgz 33
+.tga 33
+.tif 33
+.tiff 33
+.xbm 33
+.xcf 33
+.xpm 33
+.xwd 33
+.xwd 33
+.yuv 33
+
+# audio
+.aac 33
+.au  33
+.flac 33
+.mid 33
+.midi 33
+.mka 33
+.mp3 33
+.mpa 33
+.mpeg 33
+.mpg 33
+.ogg  33
+.ra 33
+.wav 33
+
+# video
+.anx 33
+.asf 33
+.avi 33
+.axv 33
+.flc 33
+.fli 33
+.flv 33
+.gl 33
+.m2v 33
+.m4v 33
+.mkv 33
+.mov 33
+.mp4 33
+.mp4v 33
+.mpeg 33
+.mpg 33
+.nuv 33
+.ogm 33
+.ogv 33
+.ogx 33
+.qt 33
+.rm 33
+.rmvb 33
+.swf 33
+.vob 33
+.wmv 33
+
+# binary document formats and multimedia source
+.doc 31
+.docx 31
+.dot 31
+.dotx 31
+.fla 31
+.ppt 31
+.pptx 31
+.psd 31
+.rtf 31
+.xls 31
+.xlsx 31
+
+# archives
+.7z   38;5;13
+.Z    38;5;13
+.apk  38;5;13
+.arj  38;5;13
+.bin  38;5;13
+.bz   38;5;13
+.bz2  38;5;13
+.cab  38;5;13  # Win
+.deb  38;5;13
+.dmg  38;5;13  # OSX
+.gem  38;5;13
+.gz   38;5;13
+.iso  38;5;13
+.jar  38;5;13
+.msi  38;5;13  # Win
+.rar  38;5;13
+.rpm  38;5;13
+.tar  38;5;13
+.tbz  38;5;13
+.tbz2 38;5;13
+.tgz  38;5;13
+.tx   38;5;13
+.war  38;5;13
+.xpi  38;5;13
+.xz   38;5;13
+.z    38;5;13
+.zip  38;5;13
+
+# for testing
+.ANSI-0 38;5;0
+.ANSI-1 38;5;1
+.ANSI-2 38;5;2
+.ANSI-3 38;5;3
+.ANSI-4 38;5;4
+.ANSI-5 38;5;5
+.ANSI-6 38;5;6
+.ANSI-7 38;5;7
+.ANSI-8 38;5;8
+.ANSI-9 38;5;9
+.ANSI-a 38;5;10
+.ANSI-b 38;5;11
+.ANSI-c 38;5;12
+.ANSI-d 38;5;13
+.ANSI-e 38;5;14
+.ANSI-f 38;5;15
+
+# unimportant text files
+*# 38;5;10
+*~ 38;5;10
+.aux 38;5;10
+.log 38;5;10
+
+# unimportant non-text files
+*,v 38;5;11
+.BAK 38;5;11
+.DIST 38;5;11
+.OFF 38;5;11
+.OLD 38;5;11
+.ORIG 38;5;11
+.bak 38;5;11
+.dist 38;5;11
+.o 38;5;11
+.off 38;5;11
+.old 38;5;11
+.org_archive 38;5;11
+.orig 38;5;11
+.pyc 38;5;11
+.swo 38;5;11
+.swp 38;5;11
+
+# encryption
+.3des 34
+.aes 34
+.asc 34
+.enc 34
+.gpg 34
+.gpg 34
+.pgp 34

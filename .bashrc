@@ -20,7 +20,9 @@ RED='\[\e[31;1m\]'
 GREEN='\[\e[32;1m\]'
 BLUE='\[\e[34;1m\]'
 RESET='\[\e[0m\]'
-export PS1="\n${RESET}\$? ${RED}\t ${GREEN}\u@\h ${BLUE}\w${RESET}\n\\\$ "
+export PS1="${RESET}\n\$? ${RED}\t ${GREEN}\u@\h ${BLUE}\w${RESET}\n\\\$ "
+
+eval `dircolors --bourne-shell ~/.dir_colors`
 
 shopt -s histverify
 shopt -s histappend
@@ -33,4 +35,6 @@ alias zless=$PAGER
 
 alias l='LC_COLLATE="C" ls -l --almost-all --classify --color=auto --group-directories-first'
 alias lt='l -t --reverse'
+alias lS='l -S --reverse'
+alias lx='l -X'
 alias j='jobs -l'
