@@ -3,13 +3,38 @@ set $mod Mod4
 floating_modifier $mod
 
 
+# solarized colors reference
+set $(S_base03)   002b36
+set $(S_base02)   073642
+set $(S_base01)   586e75
+set $(S_base00)   657b83
+set $(S_base0)    839496
+set $(S_base1)    93a1a1
+set $(S_base2)    eee8d5
+set $(S_base3)    fdf6e3
+set $(S_yellow)   b58900
+set $(S_orange)   cb4b16
+set $(S_red)      dc322f
+set $(S_magenta)  d33682
+set $(S_violet)   6c71c4
+set $(S_blue)     268bd2
+set $(S_cyan)     2aa198
+set $(S_green)    859900
+
+
 # starting programs
 bindsym $mod+Return exec urxvt256c
-bindsym $mod+d exec "dmenu_run -nb \#002b36 -nf \#586e75 -sb \#073642 -sf \#6c71c4 -fn -*-terminus-bold-*-*-*-14-*-*-*-*-*-*-*"
+bindsym $mod+d exec "dmenu_run -nb \#$(S_base03) -nf \#$(S_base01) -sb \#$(S_base02) -sf \#$(S_violet) -fn -*-terminus-bold-*-*-*-14-*-*-*-*-*-*-*"
 bindsym $mod+m exec "cmus-remote -u"
 #bindsym $mod+l exec "notify-send DUNST_COMMAND_PAUSE; i3lock -c 002b36; notify-send DUNST_COMMAND_RESUME"
-bindsym $mod+l exec "i3lock -c 002b36"
+bindsym $mod+l exec "i3lock -c $(S_base03)"
 bindsym $mod+Shift+k kill
+
+
+# volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 8+; killall -SIGUSR1 i3status"
+bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 8-; killall -SIGUSR1 i3status"
+bindsym XF86AudioMute exec --no-startup-id "amixer set Master toggle; killall -SIGUSR1 i3status"
 
 
 # restarting and quitting i3
@@ -95,46 +120,29 @@ bindsym $mod+Shift+r mode "resize"
 
 
 # appearance
+
 font -*-terminus-bold-*-*-*-14-*-*-*-*-*-*-*
-# class                 border  backgr. text    indicator
-client.focused          #586e75 #073642 #6c71c4 #586e75 # base01  base02  violet  base01
-client.focused_inactive #073642 #002b36 #839496 #073642 # base02  base03  base0   base02
-client.unfocused        #073642 #002b36 #586e75 #586e75 # base02  base03  base01  base01
-client.urgent           #073642 #dc322f #eee8d5 #dc322f # base02  red     base2   red
-client.background       #002b36                         # base03
-
-# solarized colors reference
-# S_base03   #002b36
-# S_base02   #073642
-# S_base01   #586e75
-# S_base00   #657b83
-# S_base0    #839496
-# S_base1    #93a1a1
-# S_base2    #eee8d5
-# S_base3    #fdf6e3
-# S_yellow   #b58900
-# S_orange   #cb4b16
-# S_red      #dc322f
-# S_magenta  #d33682
-# S_violet   #6c71c4
-# S_blue     #268bd2
-# S_cyan     #2aa198
-# S_green    #859900
-
+# class                 border       background   text         indicator
+client.focused          #$(S_base01) #$(S_base02) #$(S_violet) #$(S_base01)
+client.focused_inactive #$(S_base02) #$(S_base03) #$(S_base0)  #$(S_base02)
+client.unfocused        #$(S_base02) #$(S_base03) #$(S_base01) #$(S_base01)
+client.urgent           #$(S_base02) #$(S_red)    #$(S_base2)  #$(S_red)
+client.background       #$(S_base03)
 
 # status bar
 bar {
     status_command i3status
     colors {
-        background #002b36  # base03
-        statusline #586e75  # base01
-        separator  #586e75  # base01
+        background #$(S_base03)
+        statusline #$(S_base01)
+        separator  #$(S_base01)
 
-        #                  border  backgr. text
-        focused_workspace  #586e75 #073642 #6c71c4  # base01  base02  violet
+        #                  border       background   text
+        focused_workspace  #$(S_base01) #$(S_base02) #$(S_violet)
         # for multi-monitor
-        active_workspace   #586e75 #657b83 #eee8d5  # base01  base00  base2
-        inactive_workspace #073642 #002b36 #586e75  # base02  base03  base01
-        urgent_workspace   #073642 #dc322f #eee8d5  # base02  red     base2
+        active_workspace   #$(S_base01) #$(S_base00) #$(S_base2)
+        inactive_workspace #$(S_base02) #$(S_base03) #$(S_base01)
+        urgent_workspace   #$(S_base02) #$(S_red)    #$(S_base2)
+
     }
 }
