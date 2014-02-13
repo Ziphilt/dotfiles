@@ -38,3 +38,6 @@ alias lt='l -t --reverse'
 alias lS='l -S --reverse'
 alias lx='l -X'
 alias j='jobs -l'
+
+alias twork='sleep 25m && notify-send -u critical "Timer is up" "Take a 5m break" &'
+alias tbreak='sleep 5m && notify-send -u critical "Timer is up" "Go back to work" &'
