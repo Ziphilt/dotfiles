@@ -13,6 +13,7 @@ set autowrite
 set backspace=indent,eol,start
 " sentences are separated by two spaces
 set cpoptions+=J
+set gdefault
 set history=1000
 set modelines=0
 set mouse=a
@@ -57,9 +58,6 @@ set splitright
 set statusline=%<%1*%f%0*\ %h%r%y%2*%m%0*%=%02.B\ %5.(%c%V%)\ %4.l/%L\ %P
 set textwidth=78
 set virtualedit=all
-
-" might not be a good default
-"set gdefault
 
 " these break plugin indent
 "set autoindent
@@ -106,6 +104,17 @@ noremap j <nop>
 noremap w <nop>
 noremap { <nop>
 noremap } <nop>
+" make arrow keys useful
+inoremap <right> <nop>
+inoremap <up> <c-x><c-y>
+inoremap <left> <nop>
+inoremap <down> <c-x><c-e>
+noremap <right> e
+noremap <s-right> E
+noremap <up> <c-y>
+noremap <left> ge
+noremap <s-left> gE
+noremap <down> <c-e>
 
 " make movement keys nice for dvorak
 " (h is fine where it is)
@@ -145,19 +154,24 @@ nnoremap j i<cr><esc>k$
 nnoremap : q:i
 nnoremap q: :
 
-nnoremap <leader><space> :set hlsearch!<cr>
+" execute macro over all lines
+vnoremap @q :normal @q<cr>
+
+nnoremap <leader><space> :set hlsearch! hlsearch?<cr>
 " search for non-ascii characters (space and tilde are the limits of
 " ascii printable chars)
 nnoremap <leader>a /[^ -~]<cr>
 nnoremap <leader>d :read !date +\%Y-\%m-\%d<cr>
-nnoremap <leader>l :set list!<cr>
+nnoremap <leader>l :set list! list?<cr>
+nnoremap <leader>m :make<cr>
 nnoremap <leader>o :browse oldfiles<cr>
 " reload config
 nnoremap <leader>r :source $MYVIMRC<cr>
 " search for extra space at the end of lines
 nnoremap <leader>s / \+$<cr>
 " edit .vimrc
-nnoremap <leader>v :vsplit $MYVIMRC<cr>
+nnoremap <leader>v :split $MYVIMRC<cr>
+nnoremap <leader>V :edit $MYVIMRC<cr>
 nnoremap <leader>w :write<cr>
 " fold with matching delimiters
 nnoremap <leader>z v%:fo<cr>
