@@ -46,3 +46,9 @@ URxvt.pointerBlankDelay: 1
 URxvt.saveLines:         40000
 URxvt.scrollBar:         false
 URxvt.urgentOnBell:      true
+
+Xautolock.time: 5
+Xautolock.cornerdelay: 2
+Xautolock.cornerredelay: 5
+Xautolock.locker: i3lock -c "002b36"
+Xautolock.corners: +00-
