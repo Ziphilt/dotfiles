@@ -21,26 +21,34 @@ set $(S_blue)     268bd2
 set $(S_cyan)     2aa198
 set $(S_green)    859900
 
+# TODO use a templating engine to make this work
+# because i3 does not support recursive variables
+#set $lock i3lock -c $(S_base03)
+set $lock i3lock -c 002b36
+
 
 # starting programs
 bindsym $mod+Return exec urxvt256c
-bindsym $mod+d exec "dmenu_run -nb \#$(S_base03) -nf \#$(S_base01) -sb \#$(S_base02) -sf \#$(S_violet) -fn -*-terminus-bold-*-*-*-14-*-*-*-*-*-*-*"
+bindsym $mod+d exec --no-startup-id "dmenu_run -nb \#$(S_base03) -nf \#$(S_base01) -sb \#$(S_base02) -sf \#$(S_violet) -fn -*-terminus-bold-*-*-*-20-*-*-*-*-*-*-*"
 bindsym $mod+m exec "cmus-remote -u"
 #bindsym $mod+l exec "notify-send DUNST_COMMAND_PAUSE; i3lock -c 002b36; notify-send DUNST_COMMAND_RESUME"
-bindsym $mod+l exec "i3lock -c $(S_base03)"
+bindsym $mod+l exec "$lock"
 bindsym $mod+Shift+k kill
+bindsym $mod+b exec --no-startup-id /home/cal/bin/background.sh
 
 
 # volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 8+; killall -SIGUSR1 i3status"
-bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 8-; killall -SIGUSR1 i3status"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 5%+; killall -SIGUSR1 i3status"
+bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 5%-; killall -SIGUSR1 i3status"
 bindsym XF86AudioMute exec --no-startup-id "amixer set Master toggle; killall -SIGUSR1 i3status"
+bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 10"
+bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 10"
 
 
 # restarting and quitting i3
 bindsym $mod+Shift+j reload
 bindsym $mod+r restart
-bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 
 # layouts
@@ -62,44 +70,45 @@ bindsym $mod+t focus down
 bindsym $mod+n focus up
 bindsym $mod+s focus right
 
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+t move down
 bindsym $mod+Shift+n move up
 bindsym $mod+Shift+s move right
 
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Left workspace prev
+bindsym $mod+Right workspace next
+#bindsym $mod+Down focus down
+#bindsym $mod+Up focus up
+
+bindsym $mod+Shift+Left move container to workspace prev
+bindsym $mod+Shift+Right move container to workspace next
+#bindsym $mod+Shift+Down move down
+#bindsym $mod+Shift+Up move up
 
 bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+Shift+Tab move container to workspace back_and_forth
 
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindcode $mod+10 workspace 1
+bindcode $mod+11 workspace 2
+bindcode $mod+12 workspace 3
+bindcode $mod+13 workspace 4
+bindcode $mod+14 workspace 5
+bindcode $mod+15 workspace 6
+bindcode $mod+16 workspace 7
+bindcode $mod+17 workspace 8
+bindcode $mod+18 workspace 9
+bindcode $mod+19 workspace 10
 
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindcode $mod+Shift+10 move container to workspace 1
+bindcode $mod+Shift+11 move container to workspace 2
+bindcode $mod+Shift+12 move container to workspace 3
+bindcode $mod+Shift+13 move container to workspace 4
+bindcode $mod+Shift+14 move container to workspace 5
+bindcode $mod+Shift+15 move container to workspace 6
+bindcode $mod+Shift+16 move container to workspace 7
+bindcode $mod+Shift+17 move container to workspace 8
+bindcode $mod+Shift+18 move container to workspace 9
+bindcode $mod+Shift+19 move container to workspace 10
 
 mode "resize" {
         bindsym h resize shrink width 10 px or 10 ppt
@@ -119,9 +128,26 @@ mode "resize" {
 bindsym $mod+Shift+r mode "resize"
 
 
+# exit mode
+set $quit_msg c:ancel l:ogout r:estart s:hutdown d:isk m:emory h:ybrid
+
+mode "$quit_msg" {
+    bindsym c mode "default"
+    bindsym l exit
+    bindsym r exec systemctl reboot
+    bindsym s exec systemctl poweroff
+    bindsym d exec "i3-msg mode 'default' && $lock && systemctl hibernate"
+    bindsym m exec "i3-msg mode 'default' && $lock && systemctl suspend"
+    bindsym h exec "i3-msg mode 'default' && $lock && systemctl hybrid-sleep"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+q mode "$quit_msg"
+
 # appearance
 
-font -*-terminus-bold-*-*-*-14-*-*-*-*-*-*-*
+font -*-terminus-bold-*-*-*-20-*-*-*-*-*-*-*
 # class                 border       background   text         indicator
 client.focused          #$(S_base01) #$(S_base02) #$(S_violet) #$(S_base01)
 client.focused_inactive #$(S_base02) #$(S_base03) #$(S_base0)  #$(S_base02)
@@ -134,7 +160,7 @@ bar {
     status_command i3status
     colors {
         background #$(S_base03)
-        statusline #$(S_base01)
+        statusline #$(S_base00)
         separator  #$(S_base01)
 
         #                  border       background   text
