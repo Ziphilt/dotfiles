@@ -1,3 +1,6 @@
 remove Lock = Caps_Lock
 keysym Caps_Lock = Escape
-keysym Alt_R = Multi_key
+!keysym Alt_R = Multi_key
+keycode 38 = a A a A adiaeresis Adiaeresis
+keycode 39 = o O s S odiaeresis Odiaeresis
+keycode 41 = u U f F udiaeresis Udiaeresis
