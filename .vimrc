@@ -1,47 +1,59 @@
 set nocompatible
 
-syntax enable
-set background=dark
-colorscheme solarized
-
-execute pathogen#infect()
+"execute pathogen#infect()
 filetype plugin indent on
-syntax sync fromstart
 
-" misc
+" autocommands {{{
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
+
+" misc {{{
 set autowrite
 set backspace=indent,eol,start
-" sentences are separated by two spaces
-set cpoptions+=J
+set cpoptions+=J " sentences are separated by two spaces
 set gdefault
 set history=1000
-set modelines=0
-set mouse=a
+set modelines=0 " no mode lines
+set mouse=a " enable mouse everywhere
 set nomodeline
 set viminfo='1000,f1,<50,s10,h
+" }}}
 
-" searching
-set nohlsearch
+" searching {{{
 set ignorecase
 set incsearch
-set smartcase
+set nohlsearch
 set nowrapscan
+set smartcase
+" }}}
 
-" indentation
+" indentation {{{
 set expandtab
 set shiftwidth=4
 set softtabstop=4
 " only indent one sw in python after open paren
 let g:pyindent_open_paren = '&sw'
+" }}}
 
-" display
+" display {{{
+syntax enable
+syntax sync fromstart
+set background=dark
+" TODO this doesn't seem to work, unless I reload the vimrc after opening a
+" file
+"let g:solarized_italic=0
+colorscheme solarized
+
 "set foldcolumn=1
 set cmdwinheight=3
 set cursorcolumn
 set cursorline
 set foldcolumn=0
 set foldmethod=manual
-set laststatus=2
+set laststatus=2 " always show status line
 set lazyredraw
 set linebreak
 set list
@@ -56,11 +68,16 @@ set sidescrolloff=5
 set splitbelow
 set splitright
 set statusline=%<%1*%f%0*\ %h%r%y%2*%m%0*%=%02.B\ %5.(%c%V%)\ %4.l/%L\ %P
-set textwidth=78
+set textwidth=0 " TODO make this depend on filetype
 set virtualedit=all
+" highlight column 81 of lines that are at least that long
+highlight ColorColumn ctermbg=10
+call matchadd('ColorColumn', '\%81v', 100)
+" }}}
 
 " these break plugin indent
 "set autoindent
+" TODO set this with filetypes for which there are no indent rules
 "set smartindent
 
 if has('persistent_undo')
@@ -77,7 +94,7 @@ endif
 "nnoremap<leader>t :au! FocusLost<cr>
 "au FocusLost * :wa
 
-" bindings
+" bindings {{{
 
 " all of these will change
 noremap <C-e> <nop>
@@ -100,7 +117,6 @@ noremap <C-v> <nop>
 noremap B <nop>
 noremap W <nop>
 noremap b <nop>
-noremap j <nop>
 noremap w <nop>
 noremap { <nop>
 noremap } <nop>
@@ -109,11 +125,11 @@ inoremap <right> <nop>
 inoremap <up> <c-x><c-y>
 inoremap <left> <nop>
 inoremap <down> <c-x><c-e>
-noremap <right> e
-noremap <s-right> E
+noremap <right> zl
+noremap <s-right> zL
 noremap <up> <c-y>
-noremap <left> ge
-noremap <s-left> gE
+noremap <left> zh
+noremap <s-left> zH
 noremap <down> <c-e>
 
 " make movement keys nice for dvorak
@@ -148,6 +164,7 @@ noremap e v
 noremap E V
 noremap <C-e> <C-V>
 
+" split line at cursor
 nnoremap j i<cr><esc>k$
 
 " prefer ex mode, start in insert
@@ -165,6 +182,7 @@ nnoremap <leader>d :read !date +\%Y-\%m-\%d<cr>
 nnoremap <leader>l :set list! list?<cr>
 nnoremap <leader>m :make<cr>
 nnoremap <leader>o :browse oldfiles<cr>
+nnoremap <leader>p :set paste! paste?<cr>
 " reload config
 nnoremap <leader>r :source $MYVIMRC<cr>
 " search for extra space at the end of lines
@@ -172,6 +190,7 @@ nnoremap <leader>s / \+$<cr>
 " edit .vimrc
 nnoremap <leader>v :split $MYVIMRC<cr>
 nnoremap <leader>V :edit $MYVIMRC<cr>
-nnoremap <leader>w :write<cr>
+nnoremap b :write<cr>
 " fold with matching delimiters
 nnoremap <leader>z v%:fo<cr>
+" }}} bindings
