@@ -39,7 +39,7 @@ URxvt.color13: S_violet
 URxvt.color14: S_base1
 URxvt.color15: S_base3
 ! URxvt.reverseVideo: true
-URxvt.font:              -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
+URxvt.font:              -*-terminus-medium-*-*-*-20-*-*-*-*-*-*-*
 URxvt.intensityStyles:   false
 URxvt.pointerBlank:      true
 URxvt.pointerBlankDelay: 1
