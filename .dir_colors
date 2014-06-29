@@ -106,6 +106,7 @@ EXEC 38;5;9  # Unix
 # important text
 *AUTHORS 01;38;5;14
 *CHANGELOG 01;38;5;14
+*COPYING 01;38;5;14
 *INSTALL 01;38;5;14
 *LICENSE 01;38;5;14
 *Makefile 01;38;5;14
@@ -114,6 +115,7 @@ EXEC 38;5;9  # Unix
 .mk 01;38;5;14
 
 # source text
+
 .0 32
 .1 32
 .2 32
@@ -126,6 +128,8 @@ EXEC 38;5;9  # Unix
 .9 32
 .C 32
 .S 32
+.ac 32
+.am 32
 .asm 32
 .c 32
 .cc 32
