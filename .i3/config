@@ -52,6 +52,10 @@ bindsym $mod+r restart
 
 
 # layouts
+bindsym $mod+a exec --no-startup-id "quickswitch.py --dmenu 'dmenu -i -l 20 -nb \#$(S_base03) -nf \#$(S_base01) -sb \#$(S_base02) -sf \#$(S_violet) -fn -*-terminus-bold-*-*-*-20-*-*-*-*-*-*-*'"
+bindsym $mod+Shift+a exec --no-startup-id "quickswitch.py --empty"
+bindsym $mod+w exec --no-startup-id "quickswitch.py --degap"
+bindsym $mod+Shift+u exec --no-startup-id "~/src/python/quickswitch-for-i3/quickswitch.py --urgent"
 bindsym $mod+backslash split h
 bindsym $mod+minus split v
 bindsym $mod+f fullscreen
