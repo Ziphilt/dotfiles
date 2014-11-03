@@ -132,7 +132,7 @@ set laststatus=2 " always show status line
 set lazyredraw
 set linebreak
 set list
-set listchars=tab:>=,trail:-,extends:>,precedes:<,nbsp:+
+set listchars=tab:>=,trail:■,extends:>,precedes:<,nbsp:+
 set number
 set ruler
 set scrolloff=3
