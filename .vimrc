@@ -18,6 +18,9 @@ augroup END
 set hidden
 set backspace=indent,eol,start
 set cpoptions+=J " sentences are separated by two spaces
+" TODO set t flag on things that aren't code: markdown, latex, mail, and text
+" and the a flag too for autoformat while typing
+set formatoptions+=croqj " make comments nicer to format
 set gdefault
 set history=1000
 set modelines=0 " no mode lines
