@@ -30,7 +30,9 @@ set $lock i3lock -c 002b36
 # starting programs
 bindsym $mod+Return exec urxvt
 bindsym $mod+d exec --no-startup-id "dmenu_run -nb \#$(S_base03) -nf \#$(S_base01) -sb \#$(S_base02) -sf \#$(S_violet) -fn -*-terminus-bold-*-*-*-20-*-*-*-*-*-*-*"
-bindsym $mod+m exec "cmus-remote -u"
+#bindsym $mod+m exec "cmus-remote -u"
+# toggle mpd playback
+bindsym $mod+Down exec --no-startup-id "mpc toggle"
 #bindsym $mod+l exec "notify-send DUNST_COMMAND_PAUSE; i3lock -c 002b36; notify-send DUNST_COMMAND_RESUME"
 bindsym $mod+l exec "$lock"
 bindsym $mod+Shift+k kill
