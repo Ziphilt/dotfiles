@@ -260,6 +260,14 @@ vnoremap @q :normal @q<cr>
 vnoremap <leader>s :sort<cr>
 
 nnoremap <leader><space> :set hlsearch! hlsearch?<cr>
+if exists(":Tabularize")
+    " 'e' for "equals"
+    nnoremap <leader>ae :Tabularize /=<cr>
+    vnoremap <leader>ae :Tabularize /=<cr>
+    " 'c' for "colon"
+    nnoremap <leader>ac :Tabularize /:\zs<cr>
+    vnoremap <leader>ac :Tabularize /:\zs<cr>
+endif
 " search for non-ascii characters (space and tilde are the limits of
 " ascii printable chars)
 nnoremap <leader>a /[^ -~]<cr>
