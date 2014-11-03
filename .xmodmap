@@ -1,6 +1,11 @@
 remove Lock = Caps_Lock
 keysym Caps_Lock = Escape
 !keysym Alt_R = Multi_key
+
+keycode 28 = y Y t T aring Aring
 keycode 38 = a A a A adiaeresis Adiaeresis
 keycode 39 = o O s S odiaeresis Odiaeresis
+keycode 40 = e E d D ae AE
 keycode 41 = u U f F udiaeresis Udiaeresis
+! doesn't seem to work
+keycode 42 = i I g G oslash Oslash
