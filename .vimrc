@@ -202,12 +202,16 @@ inoremap <right> <nop>
 inoremap <up> <c-x><c-y>
 inoremap <left> <nop>
 inoremap <down> <c-x><c-e>
-noremap <right> zl
+noremap <right> 3zl
 noremap <s-right> zL
-noremap <up> <c-y>
-noremap <left> zh
+noremap <up> <c-u>
+" TODO doesn't work in rxvt-unicode
+"noremap <s-up> <c-y>
+noremap <left> 3zh
 noremap <s-left> zH
-noremap <down> <c-e>
+noremap <down> <c-d>
+" TODO doesn't work in rxvt-unicode
+"noremap <s-down> <c-e>
 
 " make movement keys nice for dvorak
 " (h is fine where it is)
