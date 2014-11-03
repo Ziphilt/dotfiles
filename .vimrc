@@ -248,6 +248,9 @@ noremap <C-e> <C-V>
 " split line at cursor
 nnoremap j i<cr><esc>k$
 
+" consistency with D
+nnoremap Y y$
+
 " prefer ex mode, start in insert
 nnoremap : q:i
 nnoremap q: :
