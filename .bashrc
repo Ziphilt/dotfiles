@@ -32,8 +32,8 @@ unset HISTFILESIZE
 HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S '
 
 RED='\[\e[31;1m\]'
-GREEN='\[\e[32;1m\]'
-BLUE='\[\e[34;1m\]'
+GREEN='\[\e[32m\]'
+BLUE='\[\e[34m\]'
 RESET='\[\e[0m\]'
 PS1="${RESET}\n\$? ${RED}\t ${GREEN}\u@\h ${BLUE}\w${RESET}\n\\\$ "
 
