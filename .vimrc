@@ -144,6 +144,8 @@ set splitbelow
 set splitright
 set statusline=%<%1*%f%0*\ %h%r%y%{fugitive#statusline()}%2*%m%0*%=%02.B\ %5.(%c%V%)\ %4.l/%L\ %P
 set textwidth=0 " TODO make this depend on filetype
+set title
+set titlestring=vim\ %f\ %h%r%y%m
 set virtualedit=all
 " highlight column 81 of lines that are at least that long
 highlight ColorColumn ctermbg=10
