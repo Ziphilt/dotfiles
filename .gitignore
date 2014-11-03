@@ -2,3 +2,5 @@
 .config/abook/addressbook*
 .config/beets/library.db
 .config/beets/state.pickle
+.config/mpd/mpd.db
+.config/mpd/playlists/*
