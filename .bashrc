@@ -25,7 +25,7 @@ unset MAIL
 unset MAILCHECK
 
 # unset this so the file will never be truncated
-HISTFILESIZE=''
+unset HISTFILESIZE
 
 # affects only the display format of history builtin, but being set does cause
 # timestamps to be placed in .bash_history
