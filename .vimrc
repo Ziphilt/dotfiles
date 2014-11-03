@@ -119,7 +119,7 @@ let g:pyindent_open_paren = '&sw'
 set background=dark
 " TODO this doesn't seem to work, unless I reload the vimrc after opening a
 " file
-"let g:solarized_italic=0
+let g:solarized_italic=0
 colorscheme solarized
 
 "set foldcolumn=1
