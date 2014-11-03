@@ -46,6 +46,13 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " }}}
 
+" Syntastic config {{{
+
+let g:syntastic_python_checkers = ['python', 'flake8']
+let g:syntastic_java_checkers = ['javac', 'checkstyle']
+
+" }}}
+
 " misc {{{
 "set autowrite
 set hidden
