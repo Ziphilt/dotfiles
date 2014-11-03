@@ -281,7 +281,7 @@ nnoremap <leader>p :set paste! paste?<cr>
 " reload config
 nnoremap <leader>r :source $MYVIMRC<cr>
 " search for extra space at the end of lines
-nnoremap <leader>s / \+$<cr>
+nnoremap <leader>s :%s/[ \t]\+$//<cr>
 " edit .vimrc
 nnoremap <leader>v :split $MYVIMRC<cr>
 nnoremap <leader>V :edit $MYVIMRC<cr>
