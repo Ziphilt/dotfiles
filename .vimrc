@@ -197,18 +197,25 @@ noremap b <nop>
 noremap w <nop>
 noremap { <nop>
 noremap } <nop>
+
 " make arrow keys useful
 inoremap <right> <nop>
 inoremap <up> <c-x><c-y>
 inoremap <left> <nop>
 inoremap <down> <c-x><c-e>
+" scroll to the right (only when 'wrap' is off)
 noremap <right> 3zl
+" scroll all the way to the right
 noremap <s-right> zL
+" scroll up half a page
 noremap <up> <c-u>
 " TODO doesn't work in rxvt-unicode
 "noremap <s-up> <c-y>
+" scroll to the left (only when 'wrap' is off)
 noremap <left> 3zh
+" scroll all the way to the left
 noremap <s-left> zH
+" scroll down half a page
 noremap <down> <c-d>
 " TODO doesn't work in rxvt-unicode
 "noremap <s-down> <c-e>
@@ -280,7 +287,7 @@ nnoremap <leader>o :browse oldfiles<cr>
 nnoremap <leader>p :set paste! paste?<cr>
 " reload config
 nnoremap <leader>r :source $MYVIMRC<cr>
-" search for extra space at the end of lines
+" search for extra space at the ends of lines, and removes them
 nnoremap <leader>s :%s/[ \t]\+$//<cr>
 " edit .vimrc
 nnoremap <leader>v :split $MYVIMRC<cr>
