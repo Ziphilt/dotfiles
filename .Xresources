@@ -53,3 +53,5 @@ Xautolock.cornerdelay: 2
 Xautolock.cornerredelay: 5
 Xautolock.locker: i3lock -c "002b36"
 Xautolock.corners: +00-
+
+Xcursor.theme: Vanilla-DMZ-AA
