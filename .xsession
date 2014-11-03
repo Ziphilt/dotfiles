@@ -3,6 +3,9 @@ xmodmap .xmodmap &
 # this is currently more annoying than helpful
 #xautolock &
 
+# hide mouse cursor when idle
+#unclutter -idle 2 &
+
 # adjust screen brightness
 redshift &
 
