@@ -148,8 +148,8 @@ set title
 set titlestring=vim\ %f\ %h%r%y%m
 set virtualedit=all
 " highlight column 81 of lines that are at least that long
-highlight ColorColumn ctermbg=10
-call matchadd('ColorColumn', '\%81v', 100)
+"highlight ColorColumn ctermbg=10
+"call matchadd('ColorColumn', '\%81v', 100)
 " }}}
 
 " these break plugin indent
