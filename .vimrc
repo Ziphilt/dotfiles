@@ -28,6 +28,14 @@ autocmd BufNewFile,BufRead *.ino set filetype=cpp
 autocmd BufNewFile,BufRead *.tex set filetype=tex
 " }}}
 
+" ftplugin {{{
+autocmd FileType mail setlocal formatoptions+=aw " support format=flowed
+" TODO collapse these all into one line
+autocmd FileType text setlocal textwidth=78 autoindent
+autocmd FileType tex setlocal textwidth=78 autoindent
+autocmd FileType markdown setlocal textwidth=78 autoindent
+" }}}
+
 " misc {{{
 "set autowrite
 set hidden
