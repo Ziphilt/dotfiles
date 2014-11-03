@@ -1,0 +1,72 @@
+# TODO maybe use custom pager to get article percent completion displayed
+# without the keyboard hints
+
+# misc conf
+auto-reload yes
+suppress-first-reload yes
+# TODO doesn't seem to work
+#refresh-on-startup no
+#browser "uzbl-browser %u >/dev/null 2>/dev/null &"
+browser "chromium %u >/dev/null 2>/dev/null &"
+error-log "~/.local/share/newsbeuter/error.log"
+history-limit 40000
+reload-threads 15
+reload-time 30
+show-keymap-hint no
+swap-title-and-hints yes
+text-width 78
+# TODO doesn't really work well
+#notify-xterm yes
+#show-read-articles no
+#show-read-feeds no
+
+
+# formats
+datetime-format "%F"
+articlelist-format "%4i %f %D %6L  %?T?|%-17T|  &?%t"
+feedlist-format "%4i %n %11u %t"
+
+articlelist-title-format    "Feed '%T' (%u/%t unread) - %U"
+dialogs-title-format        "Dialogs"
+feedlist-title-format       "Feeds (%u/%t unread)%?T? - tag `%T'&?"
+filebrowser-title-format    "%?O?Open File&Save File? - %f"
+help-title-format           "Help"
+itemview-title-format       "Article '%T' (%u/%t unread)"
+searchresult-title-format   "Search result (%u/%t unread)"
+selectfilter-title-format   "Select Filter"
+selecttag-title-format      "Select Tag"
+urlview-title-format        "URLs"
+
+
+# notifications
+notify-format "newsbeuter: %f unread feeds, %n unread articles total"
+# TODO need to make dunst behave better with i3lock
+#notify-program "notify-send -u critical"
+notify-beep yes
+
+
+# bindings
+bind-key a open
+bind-key e quit
+bind-key E hard-quit
+bind-key u edit-urls
+bind-key h prev-unread
+bind-key H next-unread
+bind-key t down
+bind-key T next
+bind-key n up
+bind-key N prev
+bind-key s toggle-article-read
+# TODO this will only work well if escape doesn't cause a delay
+#bind-key ESC quit
+
+
+# colors
+color background          color12 color8
+color listnormal          color12 color8
+color listfocus           color12 color0
+color listnormal_unread   color12 color8 bold
+color listfocus_unread    color12 color0 bold
+color info                color13 color0 bold
+color article             color12 color8
+#search-highlight-colors black yellow bold
