@@ -3,6 +3,9 @@ xmodmap .xmodmap &
 # this is currently more annoying than helpful
 #xautolock &
 
+# adjust screen brightness
+redshift &
+
 # disable X screensaver
 xset s off
 xset -dpms
