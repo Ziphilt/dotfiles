@@ -42,43 +42,10 @@ shopt -s checkwinsize
 # alias less=$PAGER
 # alias zless=$PAGER
 
-# LC_COLLATE set so that names are sorted asciibetically, not with the default
-# ignoring of period at the beginning of the name
-alias l='LC_COLLATE="C" ls -l --almost-all --classify --color=auto --group-directories-first'
-# sort by time
-alias lt='l -t --reverse'
-# sort by size
-alias lS='l -S --reverse'
-# sort by extension
-alias lx='l -X'
-# show PIDs
-#alias j='jobs -l'
-
-alias twork='sleep 25m && notify-send -u critical "Timer is up" "Take a 5m break" &'
-alias tbreak='sleep 5m && notify-send -u critical "Timer is up" "Go back to work" &'
-
-# -- required so that alias doesn't read "-=" as an option
-alias -- -='cd -'
-
+source ~/.env.sh
+unalias -a # clear all aliases first
+source ~/.aliases.sh
 alias rc='. ~/.bashrc'
 alias vrc='vim ~/.bashrc'
-
-# secure vim, with no viminfo or swap file
-alias secvim='vim -n -i NONE'
-# clean vim, with minimal configuration (just set nocompatible)
-alias cleanvim='vim -N -u NONE'
-
-alias e='exit'
-alias m='make -j5'
-# start up a root shell while preserving the environment for comfort
-alias s='sudo --preserve-env --shell'
-alias gs='git status -s'
-alias gp='ping -c 1 google.com'
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias gc='git commit -m'
-alias pa='ps -eF | ack'
-# reset terminal
-alias r='printf "\ec"'
 
 #fortune | cowsay -W 78
