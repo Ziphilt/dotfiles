@@ -271,6 +271,8 @@ endif
 " search for non-ascii characters (space and tilde are the limits of
 " ascii printable chars)
 nnoremap <leader>u /[^ -~]<cr>
+" replace all instances of multiple consecutive newlines with just one
+nnoremap <leader>n :%s/^\n\n\+/\r/<cr>
 nnoremap <leader>d :read !date +\%Y-\%m-\%d<cr>
 nnoremap <leader>l :set list! list?<cr>
 nnoremap <leader>m :make<cr>
