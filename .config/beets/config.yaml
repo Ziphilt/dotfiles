@@ -1,0 +1,28 @@
+directory: ~/music/beets
+
+paths:
+    default:    %lower{%asciify{$albumartist-$year-$album%aunique{}/${track}-$title}}
+    singleton:  %lower{%asciify{single/$artist-$year-$title}}
+    comp:       %lower{%asciify{compilation/$album%aunique{}/$track-$title}}
+
+replace:
+    '[\\/]':          '_'
+    '^\.':            '_'
+    '[\x00-\x1f]':    '_'
+    '[<>:"\?\*\|]':   '_'
+    '\.$':            '_'
+    '\s+$':           ''
+    '^\s+':           ''
+    '[\s_]+':         '_'
+    '\(':             '-'
+    '\)':             ''
+
+plugins:
+    - lyrics
+    - scrub
+    - info
+    - random
+    - replaygain
+
+replaygain:
+    backend: gstreamer
