@@ -35,7 +35,7 @@ RED='\[\e[31;1m\]'
 GREEN='\[\e[32m\]'
 BLUE='\[\e[34m\]'
 RESET='\[\e[0m\]'
-PS1="${RESET}\n\$? ${RED}\t ${GREEN}\u@\h ${BLUE}\w${RESET}\n\\\$ "
+PS1="${RESET}\n\$?\n${GREEN}\t ${BLUE}\u${RESET}@${GREEN}\h ${BLUE}\w${RESET}\n\\\$ "
 
 # set colors that ls uses for printing file names
 eval `dircolors --bourne-shell ~/.dir_colors`
