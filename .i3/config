@@ -34,7 +34,7 @@ bindsym $mod+d exec --no-startup-id "dmenu_run -nb \#$(S_base03) -nf \#$(S_base0
 # toggle mpd playback
 bindsym $mod+Down exec --no-startup-id "mpc toggle"
 #bindsym $mod+l exec "notify-send DUNST_COMMAND_PAUSE; i3lock -c 002b36; notify-send DUNST_COMMAND_RESUME"
-bindsym $mod+l exec "$lock"
+#bindsym $mod+l exec "$lock"
 bindsym $mod+Shift+k kill
 bindsym $mod+b exec --no-startup-id /home/cal/bin/background.sh
 
@@ -135,11 +135,12 @@ bindsym $mod+Shift+r mode "resize"
 
 
 # exit mode
-set $quit_msg c:ancel l:ogout r:estart s:hutdown d:isk m:emory h:ybrid
+set $quit_msg c:ancel l:ock e:xit r:estart s:hutdown d:isk m:emory h:ybrid
 
 mode "$quit_msg" {
     bindsym c mode "default"
-    bindsym l exit
+    bindsym l exec "i3-msg mode 'default' && $lock"
+    bindsym e exit
     bindsym r exec systemctl reboot
     bindsym s exec systemctl poweroff
     bindsym d exec "i3-msg mode 'default' && $lock && systemctl hibernate"
