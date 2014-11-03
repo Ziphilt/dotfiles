@@ -11,6 +11,11 @@ augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
+
+" automagically leave insert mode after a delay
+"autocmd InsertEnter * let updaterestore = &updatetime | set updatetime=10000
+"autocmd InsertLeave * let &updatetime = updaterestore
+"autocmd CursorHoldI * stopinsert
 " }}}
 
 " misc {{{
