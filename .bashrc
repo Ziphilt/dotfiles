@@ -21,6 +21,9 @@ PROMPT_COMMAND='history -a; printf "\a"'
 HISTCONTROL=ignorespace:ignoredups:erasedups
 HISTSIZE=10000
 
+unset MAIL
+unset MAILCHECK
+
 # unset this so the file will never be truncated
 HISTFILESIZE=''
 
