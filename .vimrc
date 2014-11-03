@@ -270,7 +270,7 @@ if exists(":Tabularize")
 endif
 " search for non-ascii characters (space and tilde are the limits of
 " ascii printable chars)
-nnoremap <leader>a /[^ -~]<cr>
+nnoremap <leader>u /[^ -~]<cr>
 nnoremap <leader>d :read !date +\%Y-\%m-\%d<cr>
 nnoremap <leader>l :set list! list?<cr>
 nnoremap <leader>m :make<cr>
