@@ -36,6 +36,16 @@ autocmd FileType tex setlocal textwidth=78 autoindent
 autocmd FileType markdown setlocal textwidth=78 autoindent
 " }}}
 
+" YouCompleteMe config {{{
+
+let g:EclimCompletionMethod = 'omnifunc'
+let g:ycm_autoclose_preview_window_after_insertion = 1
+" disable youcompleteme for C sources, because its warnings are annoying
+" TODO configure ycm to not be annoying
+"let g:ycm_filetype_blacklist = {'c': 1}
+
+" }}}
+
 " misc {{{
 "set autowrite
 set hidden
