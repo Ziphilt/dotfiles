@@ -142,7 +142,7 @@ set sidescroll=1
 set sidescrolloff=5
 set splitbelow
 set splitright
-set statusline=%<%1*%f%0*\ %h%r%y%2*%m%0*%=%02.B\ %5.(%c%V%)\ %4.l/%L\ %P
+set statusline=%<%1*%f%0*\ %h%r%y%{fugitive#statusline()}%2*%m%0*%=%02.B\ %5.(%c%V%)\ %4.l/%L\ %P
 set textwidth=0 " TODO make this depend on filetype
 set virtualedit=all
 " highlight column 81 of lines that are at least that long
