@@ -257,6 +257,7 @@ nnoremap q: :
 
 " execute macro over all lines
 vnoremap @q :normal @q<cr>
+vnoremap <leader>s :sort<cr>
 
 nnoremap <leader><space> :set hlsearch! hlsearch?<cr>
 " search for non-ascii characters (space and tilde are the limits of
