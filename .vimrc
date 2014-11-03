@@ -2,6 +2,8 @@ set nocompatible
 
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+syntax enable
+syntax sync fromstart
 filetype plugin indent on
 
 " autocommands {{{
@@ -40,8 +42,6 @@ let g:pyindent_open_paren = '&sw'
 " }}}
 
 " display {{{
-syntax enable
-syntax sync fromstart
 set background=dark
 " TODO this doesn't seem to work, unless I reload the vimrc after opening a
 " file
