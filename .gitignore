@@ -1,4 +1,3 @@
-*.swp
 .config/abook/addressbook*
 .config/beets/library.db
 .config/beets/state.pickle
