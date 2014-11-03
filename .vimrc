@@ -53,6 +53,27 @@ let g:syntastic_java_checkers = ['javac', 'checkstyle']
 
 " }}}
 
+" RainbowParentheses config {{{
+
+" let g:rbpt_colorpairs = [
+"     \ ['13',  'DarkOrchid3'],
+"     \ ['4',   'firebrick3'],
+"     \ ['2',   'RoyalBlue3'],
+"     \ ['3',   'SeaGreen3'],
+"     \ ['9',   'DarkOrchid3'],
+"     \ ['1',   'firebrick3'],
+"     \ ]
+
+" augroup RainbowParentheses
+"     autocmd!
+"     autocmd VimEnter * RainbowParenthesesToggle
+"     autocmd Syntax * RainbowParenthesesLoadRound
+"     autocmd Syntax * RainbowParenthesesLoadSquare
+"     autocmd Syntax * RainbowParenthesesLoadBraces
+" augroup END
+
+" }}}
+
 " misc {{{
 "set autowrite
 set hidden
