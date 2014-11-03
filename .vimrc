@@ -14,7 +14,8 @@ augroup END
 " }}}
 
 " misc {{{
-set autowrite
+"set autowrite
+set hidden
 set backspace=indent,eol,start
 set cpoptions+=J " sentences are separated by two spaces
 set gdefault
