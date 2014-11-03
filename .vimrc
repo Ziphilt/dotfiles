@@ -18,6 +18,16 @@ augroup END
 "autocmd CursorHoldI * stopinsert
 " }}}
 
+" ftdetect {{{
+autocmd BufNewFile,BufRead *.muttrc set filetype=muttrc
+autocmd BufNewFile,BufRead *.strace* set filetype=strace
+" vim thinks .md is modula2
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd BufNewFile,BufRead *.ino set filetype=cpp
+" vim thinks empty .tex file is plaintex
+autocmd BufNewFile,BufRead *.tex set filetype=tex
+" }}}
+
 " misc {{{
 "set autowrite
 set hidden
