@@ -1,0 +1,162 @@
+# S_base03  #002b36 recolor-bg
+# S_base02  #073642 statusbar-bg
+# S_base01  #586e75
+# S_base00  #657b83
+# S_base0   #839496 recolor-fg
+# S_base1   #93a1a1
+# S_base2   #eee8d5
+# S_base3   #fdf6e3
+# S_yellow  #b58900
+# S_orange  #cb4b16
+# S_red     #dc322f error
+# S_magenta #d33682
+# S_violet  #6c71c4
+# S_blue    #268bd2
+# S_cyan    #2aa198
+# S_green   #859900
+
+set font "Terminus Bold 18"
+set recolor true
+set render-loading false
+set zoom-step 50
+
+map t scroll half-down
+map n scroll half-up
+map T scroll down
+map N scroll up
+map h search forward # not currently documented (as of 0.2.7), read the source!
+map H search backward # not currently documented (as of 0.2.7), read the source!
+map A zoom out
+map S zoom in
+map c recolor
+map ZZ quit
+#unmap gg
+#map g scroll top
+
+# completion-bg
+#     Defines the background color that is used for command line completion entries
+#     · Default value: #232323
+
+# completion-fg
+#     Defines the foreground color that is used for command line completion entries
+#     · Default value: #DDDDDD
+
+# completion-group-bg
+#     Defines the background color that is used for command line completion group elements
+#     · Default value: #000000
+
+# completion-group-fg
+#     Defines the foreground color that is used for command line completion group elements
+#     · Default value: #DEDEDE
+
+# completion-highlight-bg
+#     Defines  the  background  color  that is used for the current command line completion
+#     element
+#     · Default value: #9FBC00
+
+# completion-highlight-fg
+#     Defines the foreground color that is used for the  current  command  line  completion
+#     element
+#     · Default value: #232323
+
+# default-fg
+#     Defines the default foreground color
+#     · Default value: #DDDDDD
+
+# default-bg
+#     Defines the default background color
+#     · Default value: #000000
+
+# inputbar-bg
+#     Defines the background color for the inputbar
+#     · Default value: #131313
+set inputbar-bg "#002b36" # base03
+
+# inputbar-fg
+#     Defines the foreground color for the inputbar
+#     · Default value: #9FBC00
+set inputbar-fg "#839496" # base0
+
+# notification-bg
+#     Defines the background color for a notification
+#     · Default value: #FFFFFF
+
+# notification-fg
+#     Defines the foreground color for a notification
+#     · Default value: #000000
+
+# notification-error-bg
+#     Defines the background color for an error notification
+#     · Default value: #FFFFFF
+set notification-error-bg "#dc322f" # red
+
+# notification-error-fg
+#     Defines the foreground color for an error notification
+#     · Default value: #FF1212
+set notification-error-fg "#eee8d5" # base2
+
+# notification-warning-bg
+#     Defines the background color for a warning notification
+#     · Default value: #FFFFFF
+set notification-warning-bg "#CB4B16" # orange
+
+# notification-warning-fg
+#     Defines the foreground color for a warning notification
+#     · Default value: #FFF712
+set notification-warning-fg "#eee8d5" # base2
+
+# tabbar-fg
+#     Defines the foreground color for a tab
+#     · Default value: #FFFFFF
+
+# tabbar-bg
+#     Defines the background color for a tab
+#     · Default value: #000000
+
+# tabbar-focus-fg
+#     Defines the foreground color for the focused tab
+#     · Default value: #9FBC00
+
+# tabbar-focus-bg
+#     Defines the background color for the focused tab
+#     · Default value: #000000
+
+# statusbar-bg
+#     Defines the background color of the statusbar
+#     · Default value: #000000
+set statusbar-bg "#073642" # base_02
+
+# statusbar-fg
+#     Defines the foreground color of the statusbar
+#     · Default value: #FFFFFF
+set statusbar-fg "#6c71c4" # violet
+
+# highlight-color
+#     Defines  the  color  that  is used for highlighting parts of the document (e.g.: show
+#     search results)
+#     · Default value: #9FBC00
+set highlight-color "#B58900" # yellow
+
+# highlight-active-color
+#     Defines the color that is used to show the current selected highlighted element (e.g:
+#     current search result)
+#     · Default value: #00BC00
+set highlight-active-color "#CB4B16" # orange
+
+# recolor-darkcolor
+#     Defines the color value that is used to represent dark colors in recoloring mode
+#     · Default value: #FFFFFF
+set recolor-darkcolor "#839496"
+
+# recolor-lightcolor
+#     Defines the color value that is used to represent light colors in recoloring mode
+#     · Default value: #000000
+set recolor-lightcolor "#002b36"
+
+# render-loading-bg
+#     Defines the background color that is used for the "Loading..." text.
+#     · Default value: #FFFFFF
+
+# render-loading-fg
+#     Defines the foreground color that is used for the "Loading..." text.
+#     · Default value: #000000
