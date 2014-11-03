@@ -5,13 +5,6 @@
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     source /usr/share/bash-completion/bash_completion
 
-# workaround to make it explicit that gnome terminal supports 256 colors
-if [ "$COLORTERM" = 'gnome-terminal' -a "$TERM" = 'xterm' ] ; then
-    export TERM='gnome-256color'
-fi
-
-export VISUAL=vim
-export EDITOR=vim
 
 # Append to the history file on every prompt.  Interestingly, this allows
 # repeats in the file even though erasedups is set.  Also prints the
