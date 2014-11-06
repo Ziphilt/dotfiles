@@ -237,6 +237,28 @@ zstyle ':completion:*:manuals.*' insert-sections true
 # TODO make this work correctly
 #zstyle ':completion:*:expand:*' tag-order all-expansions
 
+# parse_git_dirty() {
+#     if command git ls-files --other --directory --exclude-standard 2>/dev/null | sed q1 >/dev/null 2>/dev/null; then
+#         echo ''
+#     else
+#         echo ' %F{3}%B?%%b%f'
+#     fi
+# }
+
+zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
+
++vi-git-untracked(){
+    if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+        git status --porcelain | grep '^??' &> /dev/null ; then
+        # This will show the marker if there are any untracked files in repo.
+        # If instead you want to show the marker only if there are untracked
+        # files in $PWD, use:
+        #[[ -n $(git ls-files --others --exclude-standard) ]] ; then
+        # TODO put this in its own logical item in hook_com
+        hook_com[branch]+=' %F{3}%B?%b%f'
+    fi
+}
+
 zstyle ':vcs_info:*' enable git svn
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' nvcsformats "%F{4}%/%f"
@@ -245,8 +267,10 @@ zstyle ':vcs_info:*' formats "%F{11}%R%f%F{4}/%S%f
 %F{11}%s%f %F{4}%b%f%u%c"
 zstyle ':vcs_info:*' actionformats "%F{11}%R%f%F{4}/%S%f
 %F{11}%s%f %F{4}%b%f%u%c %F{3}%B%a%%b%f"
-zstyle ':vcs_info:*' stagedstr " %F{9}%BS%b%f"
-zstyle ':vcs_info:*' unstagedstr " %F{3}%BU%b%f"
+zstyle ':vcs_info:*' stagedstr " %F{1}%BS%b%f"
+zstyle ':vcs_info:*' unstagedstr " %F{9}%BU%b%f"
+# TODO get this to be used
+# zstyle ':vcs_info:*' untrackedstr " %F{3}%B?%b%f"
 
 # TODO what do these do?
 zstyle ':completion:*' completer _expand _complete _approximate _ignored
