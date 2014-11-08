@@ -43,6 +43,7 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 " disable youcompleteme for C sources, because its warnings are annoying
 " TODO configure ycm to not be annoying
 "let g:ycm_filetype_blacklist = {'c': 1}
+let g:ycm_filetype_blacklist = {'tex': 1, 'text': 1, 'markdown': 1, 'mail': 1}
 
 " }}}
 
