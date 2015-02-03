@@ -130,6 +130,8 @@ if [ "$TERM" = 'linux' ] ; then
     pr_title=''
 else
     pr_title=$'\e]0;zsh %m %l %~\a'
+    add-zsh-hook precmd send_beep
+    add-zsh-hook preexec grml_control_xterm_title
 fi
 
 #pr_bell=$'\a'
@@ -222,9 +224,7 @@ function send_beep () {
     printf '\a'
 }
 
-add-zsh-hook preexec grml_control_xterm_title
 add-zsh-hook precmd vcs_info
-add-zsh-hook precmd send_beep
 
 zstyle ':completion:*' auto-description 'specify %d'
 zstyle ':completion:*:descriptions' format '%F{11}complete%f %F{6}%B%d%b%f'
