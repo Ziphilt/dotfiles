@@ -137,6 +137,7 @@ set listchars=tab:>=,trail:■,extends:>,precedes:<,nbsp:+
 set number
 set ruler
 set scrolloff=3
+set shortmess+=I " disable splash screen
 set showcmd
 set showmatch
 set sidescroll=1
