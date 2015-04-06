@@ -170,6 +170,7 @@ source ~/.aliases.sh
 alias rc='. ~/.zshrc'
 alias vrc='vim ~/.zshrc'
 alias -g BG='&>/dev/null &|'
+alias -g NOERR='2>/dev/null'
 
 # mkdir -p and then cd
 # borrowed from grml
