@@ -9,6 +9,8 @@ alias cp='cp --interactive --reflink=auto'
 alias mv='mv --interactive'
 alias rm='rm --interactive=once'
 alias abook='abook --config ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook'
+alias grep='grep --color=auto'
+alias dig='dig +nostats +nocmd'
 
 alias pa='ps -eF | ack'
 #alias pa='ps -eF | grep --color=auto'
@@ -60,6 +62,7 @@ alias news="VISUAL=\"vim -c 'set notitle'\" newsbeuter"
 alias pacredb='pc -Syy'
 alias pacup='pc -Syu'
 alias pcq='pc -Q'
+alias pcqi='pc -Qi'
 alias pcql='pc -Ql'
 alias pcqo='pc -Qo'
 alias pcqs='pc -Qs'
@@ -70,10 +73,26 @@ alias pf='pkgfile'
 alias pg='ping -c 1 google.com'
 alias pw='ping -c 1 wpi.edu'
 alias sd='sudo ' # end with space so that other aliases will expand after it
+alias t='tree'
+alias ta='t -a'
 alias tbreak='sleep 5m && notify-send -u critical "Timer is up" "Go back to work" &'
 alias twork='sleep 25m && notify-send -u critical "Timer is up" "Take a 5m break" &'
 alias unopdf='unoconv -f pdf'
 alias v='vim'
 alias vc='vim -N -u NONE' # clean vim, with minimal configuration (just set nocompatible)
 alias vs='vim -n -i NONE' # secure vim, with no viminfo or swap file
+alias ws='wget --convert-links --page-requisites'
+alias wsm='ws --mirror'
 alias ythd='youtube-dl -f137+140' # get 1080p video and audio
+
+alias valg='valgrind --quiet --leak-check=full --error-exitcode=1 '
+alias ackc='ack -Ci --type=cc'
+alias ackh='ack -Ci --type=haskell'
+alias ackj='ack -Ci --type=java'
+alias ackp='ack -Ci --type=python'
+
+# ss prints out lots of trailing whitespace, which screws up urxvt's wrapping
+alias ssta="ss -ta | sed -e 's/ *$//'"
+alias sstar="ss -tar | sed -e 's/ *$//'"
+alias sstap="ss -tap | sed -e 's/ *$//'"
+alias sstarp="ss -tarp | sed -e 's/ *$//'"
