@@ -176,16 +176,19 @@ EXEC 38;5;9  # Unix
 
 # image
 .JPG 33
+.ORF 33
 .bmp 33
 .cgm 33
 .dl 33
 .dvi 33
 .emf 33
 .eps 33
+.epub 33
 .gif 33
 .jpeg 33
 .jpg 33
 .mng 33
+.mobi 33
 .pbm 33
 .pcx 33
 .pdf 33
@@ -211,6 +214,7 @@ EXEC 38;5;9  # Unix
 .aac 33
 .au  33
 .flac 33
+.m4a 33
 .mid 33
 .midi 33
 .mka 33
@@ -326,6 +330,7 @@ EXEC 38;5;9  # Unix
 .bak 38;5;11
 .dist 38;5;11
 .o 38;5;11
+.class 38;5;11
 .off 38;5;11
 .old 38;5;11
 .org_archive 38;5;11
