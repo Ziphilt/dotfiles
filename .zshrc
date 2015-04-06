@@ -129,7 +129,7 @@ eval `dircolors --bourne-shell ~/.dir_colors`
 if [ "$TERM" = 'linux' ] ; then
     pr_title=''
 else
-    pr_title=$'\e]0;zsh %m %l %~\a'
+    pr_title=$'\e]0;zsh %n@%m %l %/\a'
     add-zsh-hook precmd send_beep
     add-zsh-hook preexec grml_control_xterm_title
 fi
@@ -213,7 +213,7 @@ function grml_control_xterm_title () {
     case $TERM in
         (xterm*|rxvt*)
             # TODO figure out what this wizardry means
-            set_title "${(%):-"zsh %l %~:"}" "$1"
+            set_title "${(%):-"zsh %n@%m %l %/:"}" "$1"
             ;;
     esac
 }
