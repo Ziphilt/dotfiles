@@ -177,27 +177,10 @@ endif
 
 " bindings {{{
 
-" all of these will change
-noremap <C-e> <nop>
-noremap H <nop>
-noremap K <nop>
-noremap L <nop>
-noremap M <nop>
-noremap N <nop>
-noremap S <nop>
-noremap T <nop>
-noremap V <nop>
-noremap k <nop>
-noremap l <nop>
-noremap n <nop>
-noremap s <nop>
-noremap t <nop>
-noremap v <nop>
 " as yet unused
 noremap <C-v> <nop>
 noremap B <nop>
 noremap W <nop>
-noremap b <nop>
 noremap w <nop>
 noremap { <nop>
 noremap } <nop>
