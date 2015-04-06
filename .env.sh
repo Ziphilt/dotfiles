@@ -33,3 +33,5 @@ export LESS_TERMCAP_ue=$'\E[0m'             # end underline
 
 export MANWIDTH='80' # format manpages to always be 80 columns
 #export MANPAGER='bash -c "vim -MRn -i NONE -c \"set ft=man nomod nolist nospell nonu\" </dev/tty <(col -b)"'
+
+export GCC_COLORS='error=31;1:warning=38;5;9;1:note=33;1:caret=37;1:locus=34;1:quote=36;1'
