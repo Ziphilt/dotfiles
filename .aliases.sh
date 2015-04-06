@@ -10,6 +10,13 @@ alias mv='mv --interactive'
 alias rm='rm --interactive=once'
 alias abook='abook --config ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook'
 
+alias pa='ps -eF | ack'
+#alias pa='ps -eF | grep --color=auto'
+alias pc='pacaur'
+#alias pc='/usr/local/bin/pacapt' # for non-pacman systems
+alias s='sudo --preserve-env --shell' # start up a root shell while preserving the environment for comfort
+#alias s='sudo env HOME=$HOME $SHELL' # alternate method for systems with older sudo
+
 alias ct='SHLVL=$((SHLVL - 1)) urxvt BG'
 alias d='dirs -v'
 alias dm='dmesg --color=always --time-format iso'
@@ -45,10 +52,8 @@ alias lx='l -X' # sort by extension
 alias m='make -j5'
 alias ma='TZ="" mutt' # blank TZ interpreted as UTC, TODO find a correct value for TZ that is UTC
 alias news="VISUAL=\"vim -c 'set notitle'\" newsbeuter"
-alias pa='ps -eF | ack'
 alias pacredb='pc -Syy'
 alias pacup='pc -Syu'
-alias pc='pacaur'
 alias pcq='pc -Q'
 alias pcql='pc -Ql'
 alias pcqo='pc -Qo'
@@ -59,7 +64,6 @@ alias pcss='pc -Ss'
 alias pf='pkgfile'
 alias pg='ping -c 1 google.com'
 alias pw='ping -c 1 wpi.edu'
-alias s='sudo --preserve-env --shell' # start up a root shell while preserving the environment for comfort
 alias sd='sudo ' # end with space so that other aliases will expand after it
 alias tbreak='sleep 5m && notify-send -u critical "Timer is up" "Go back to work" &'
 alias twork='sleep 25m && notify-send -u critical "Timer is up" "Take a 5m break" &'
