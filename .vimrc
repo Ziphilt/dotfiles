@@ -89,6 +89,8 @@ set modelines=0 " no mode lines
 set mouse=a " enable mouse everywhere
 set nomodeline
 set viminfo='1000,f1,<50,s10,h
+set wildignore=*.swp,*.o,*.class,*.zip,*.pdf,*.so
+set wildignorecase
 " fix annoying delay in terminal when pressing ESC to exit insert mode
 if ! has('gui_running')
     set ttimeoutlen=10
