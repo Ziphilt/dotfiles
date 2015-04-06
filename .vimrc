@@ -253,6 +253,8 @@ nnoremap q: :
 vnoremap @q :normal @q<cr>
 vnoremap <leader>s :sort<cr>
 
+nnoremap b :write<cr>
+
 nnoremap <leader><space> :set hlsearch! hlsearch?<cr>
 if exists(":Tabularize")
     " 'e' for "equals"
@@ -279,7 +281,6 @@ nnoremap <leader>s :%s/[ \t]\+$//<cr>
 " edit .vimrc
 nnoremap <leader>v :split $MYVIMRC<cr>
 nnoremap <leader>V :edit $MYVIMRC<cr>
-nnoremap b :write<cr>
 " fold with matching delimiters
 nnoremap <leader>z v%:fo<cr>
 " }}} bindings
