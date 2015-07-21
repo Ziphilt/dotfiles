@@ -246,7 +246,15 @@ zstyle ':completion:*:manuals.*' insert-sections true
 #     fi
 # }
 
-zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
+zstyle ':vcs_info:git*+set-message:*' hooks git-ignored git-untracked
+
++vi-git-ignored(){
+    if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+        git status --porcelain --ignored | grep '^!!' &> /dev/null ; then
+        # TODO put this in its own logical item in hook_com
+        hook_com[branch]+=' %F{11}%BI%b%f'
+    fi
+}
 
 +vi-git-untracked(){
     if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
