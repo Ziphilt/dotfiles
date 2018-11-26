@@ -246,7 +246,7 @@ zstyle ':completion:*:manuals.*' insert-sections true
 #     fi
 # }
 
-zstyle ':vcs_info:git*+set-message:*' hooks git-ignored git-untracked
+zstyle ':vcs_info:git*+set-message:*' hooks git-ignored git-stash git-untracked
 
 +vi-git-ignored(){
     if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
@@ -265,6 +265,14 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-ignored git-untracked
         #[[ -n $(git ls-files --others --exclude-standard) ]] ; then
         # TODO put this in its own logical item in hook_com
         hook_com[branch]+=' %F{3}%B?%b%f'
+    fi
+}
+
++vi-git-stash(){
+    stashNum=$(git stash list 2> /dev/null | wc -l)
+    if [ "$stashNum" != "0" ]
+    then
+        hook_com[branch]+=" %F{11}%B${stashNum}S%b%f"
     fi
 }
 
