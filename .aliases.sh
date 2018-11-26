@@ -21,11 +21,13 @@ alias s='sudo --preserve-env --shell' # start up a root shell while preserving t
 
 alias ct='SHLVL=$((SHLVL - 1)) urxvt BG'
 alias d='dirs -v'
+alias diffdir='diff --recursive --brief --no-dereference'
 alias dm='dmesg --color=always --time-format iso'
 alias dmf='dm --follow'
 alias dmt='dm | tail'
 alias dpoff='xrandr --output DP2 --off'
 alias dpon='xrandr --output DP2 --mode 1280x1024 --right-of eDP1'
+alias dusage='du --max-depth=1 -h 2>/dev/null | sort -h'
 alias e='exit'
 alias f='find'
 alias fd='find -type d | sort' # TODO reduce redundancy with '| sort'
